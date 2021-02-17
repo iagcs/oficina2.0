@@ -1,0 +1,70 @@
+O objetivo inicial foi criar um site simples e que atendesse aos pedidos do cliente. O projeto foi concluído 
+com todas as funcionalidades e atende 100% à necessidade do usuário. A aplicação está bem limpa e fácil de
+navegar. Além de ter o total controle tanto no front-end quanto no back-end da inserção de dados por parte
+do usuário, fazendo todas as validações necessárias com o Form Request do laravel.
+
+Com a própria arquitetura do Laravel (MVC), fica bem mais simples deixar o código estruturado e organizado, fazendo
+com que facilite as manutenções futuras.
+
+No arquivo '.env' adicione o seguinte código:
+
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:XCN/clzkwXmGbzm5OvzfZXzvLOpnf0L4E1Kp4qHWn20=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+LOG_CHANNEL=stack
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=
+DB_USERNAME=root
+DB_PASSWORD=
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+MEMCACHED_HOST=127.0.0.1
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=null
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+
+
+Para Fazer o código funcionar , primeiramente deve-se criar um arquivo '.env' na raiz do projeto e adicionar o código a cima.
+Logo após coloque o nome da base de dados criada no seu banco de dados local (voce deverá cria-la), na variável 'DB_DATABASE='.
+Crie uma chave com o comando 'php artisan key:generate' na raiz do seu projeto pelo terminal prompt.
+
+Após isso rode o comando 'php artisan migrate' na raiz do seu projeto pelo terminal prompt para adicionar as tabelas na base local,
+que são necessárias para funcionamento da aplicação.
+
+Feito isso, basta rodar o comando  php artisan serve, também na raiz do projeto pelo terminal prompt, abrir o link gerado 
+no terminal, no seu navegador e adicionar '/orcamentos' ao final da url para ter acesso à pagina inicial da aplicação.
